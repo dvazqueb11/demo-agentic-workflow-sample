@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Common List — Quiet Utility wireframe</title>
+    <link rel="stylesheet" href="./wireframe.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="#main">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>Common List</span>
+      </a>
+      <span class="demo-note"><span aria-hidden="true">●</span> Public shared demo</span>
+    </header>
+
+    <main id="main" class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Today’s list</p>
+        <div>
+          <h1 id="page-title">Keep the next thing clear.</h1>
+          <p>Tasks remain here until someone deletes them. Please use public demo data only.</p>
+        </div>
+      </section>
+
+      <form class="composer" id="composer">
+        <label for="title">New task</label>
+        <div class="composer-row">
+          <input id="title" name="title" maxlength="120" required placeholder="What needs doing?">
+          <button type="submit">Add task</button>
+        </div>
+        <label class="description-label" for="description">
+          Description <span>Optional</span>
+        </label>
+        <textarea id="description" name="description" maxlength="1000" rows="2" placeholder="Add useful context"></textarea>
+        <p class="form-message" id="form-message" aria-live="polite"></p>
+      </form>
+
+      <section class="tasks" aria-labelledby="list-title">
+        <div class="list-heading">
+          <div>
+            <h2 id="list-title">Shared tasks · <span id="open-count">3</span> open</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-filter="open" aria-pressed="false">Open</button>
+            <button class="filter" type="button" data-filter="complete" aria-pressed="false">Done</button>
+          </div>
+        </div>
+
+        <ul class="task-list" id="task-list">
+          <li class="task-item" data-state="open">
+            <input class="task-check" id="task-1" type="checkbox">
+            <label class="task-copy" for="task-1">
+              <span class="task-title">Confirm workshop room access</span>
+              <span class="task-description">Check the guest list before the 10:00 session.</span>
+            </label>
+            <button class="row-action" type="button" aria-label="Actions for Confirm workshop room access">•••</button>
+          </li>
+          <li class="task-item" data-state="open">
+            <input class="task-check" id="task-2" type="checkbox">
+            <label class="task-copy" for="task-2">
+              <span class="task-title">Print the scenario handout</span>
+              <span class="task-description">One copy for each table plus two spares.</span>
+            </label>
+            <button class="row-action" type="button" aria-label="Actions for Print the scenario handout">•••</button>
+          </li>
+          <li class="task-item" data-state="complete">
+            <input class="task-check" id="task-3" type="checkbox" checked>
+            <label class="task-copy" for="task-3">
+              <span class="task-title">Load the demo repository</span>
+              <span class="task-description">Verify the baseline workflow is visible.</span>
+            </label>
+            <button class="row-action" type="button" aria-label="Actions for Load the demo repository">•••</button>
+          </li>
+          <li class="task-item" data-state="open">
+            <input class="task-check" id="task-4" type="checkbox">
+            <label class="task-copy" for="task-4">
+              <span class="task-title">Test the presentation display</span>
+              <span class="task-description">Use the full browser width at 125% zoom.</span>
+            </label>
+            <button class="row-action" type="button" aria-label="Actions for Test the presentation display">•••</button>
+          </li>
+        </ul>
+        <div class="empty" id="empty" hidden>
+          <span aria-hidden="true">✓</span>
+          <h3>No tasks in this view</h3>
+          <p>Choose another filter or add the next task above.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const list = document.querySelector("#task-list");
+      const title = document.querySelector("#title");
+      const description = document.querySelector("#description");
+      const message = document.querySelector("#form-message");
+      const filters = [...document.querySelectorAll(".filter")];
+
+      function refreshCount() {
+        const open = list.querySelectorAll('[data-state="open"]').length;
+        document.querySelector("#open-count").textContent = String(open);
+      }
+
+      document.querySelector("#composer").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const value = title.value.trim();
+        if (!value) {
+          message.textContent = "Enter a title before adding the task.";
+          title.focus();
+          return;
+        }
+        message.textContent = `Added “${value}”.`;
+        title.value = "";
+        description.value = "";
+        title.focus();
+      });
+
+      list.addEventListener("change", (event) => {
+        if (!event.target.matches(".task-check")) return;
+        event.target.closest(".task-item").dataset.state = event.target.checked ? "complete" : "open";
+        refreshCount();
+      });
+
+      filters.forEach((button) => button.addEventListener("click", () => {
+        filters.forEach((item) => {
+          const active = item === button;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+        const filter = button.dataset.filter;
+        let visible = 0;
+        list.querySelectorAll(".task-item").forEach((item) => {
+          const show = filter === "all" || item.dataset.state === filter;
+          item.hidden = !show;
+          if (show) visible += 1;
+        });
+        document.querySelector("#empty").hidden = visible !== 0;
+      }));
+    </script>
+  </body>
+</html>

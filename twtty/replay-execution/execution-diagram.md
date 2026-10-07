@@ -17,7 +17,11 @@ flowchart LR
     P["011 meta/autopilot-enable<br/>PLAN and EXECUTE<br/>Human anchor verified"]
     S1["012 meta/skill-install<br/>Impeccable installed<br/>Human approved"]
     C1["013 meta/config<br/>GitHub agentic stack<br/>Autopilot"]
-    N["Next: PLAN mode offer and plan/2a"]
+    PA["014 plan/2a<br/>Architecture approved<br/>Autopilot"]
+    PD["015 plan/2b<br/>Design and UX approved<br/>Human visual approval"]
+    PO["016 plan/2c<br/>Parallel DAG approved<br/>Autopilot"]
+    PX["017 plan/2c<br/>PLAN-EXIT approved<br/>Autopilot"]
+    N["Next: EXECUTE ready work items"]
 
-    R --> S --> C --> A --> I --> G --> D --> B --> U --> X --> P --> S1 --> C1 --> N
+    R --> S --> C --> A --> I --> G --> D --> B --> U --> X --> P --> S1 --> C1 --> PA --> PD --> PO --> PX --> N
 ```

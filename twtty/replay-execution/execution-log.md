@@ -224,3 +224,66 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/twtty-runtime-config/agentic-stack/github-agentic-workflows.md`
 - **Artifact / path changed:** `twtty/twtty-runtime-config/README.md`
 - **Notes:** Auto-approved under Autopilot (per 011). Effective selections remain harness = GitHub Copilot, devtools = GitHub, cloud = Azure, risk calibration = L2 plus agentic overlay, policies and best practices = defaults, UX = default, escalation = GitHub Issues. Agentic stack is now GitHub Agentic Workflows with Copilot coding agent. Current official GitHub documentation confirms structured token and AI-credit evidence, satisfying the Spec cost-measurement contract.
+
+### 014 · plan/2a · —
+
+- **Timestamp:** 2026-10-07T03:10:52Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Approve the baseline single-domain Architecture with C++17 and Oat++, React and TypeScript, Azure Container Apps and Blob Storage through managed identity, GitHub Agentic Workflows with one Copilot remediation agent, deterministic outer controls, OpenAPI 3.1, and L2 test, security, observability, and supply-chain controls.
+  ```
+
+- **Execution outcome:** Architecture complete
+- **Artifact / path changed:** `twtty/plan/plan.md`
+- **Notes:** Auto-approved under Autopilot (per 011). Architecture declares nine components, public-demo data boundaries, identity and OIDC controls, a single active application replica, current technology choices, a 570-second workflow budget, structured token and AI-credit evidence, and nineteen renderable Mermaid diagrams across the complete Plan.
+
+### 015 · plan/2b · —
+
+- **Timestamp:** 2026-10-07T03:10:54Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Approve the rendered Quiet Utility direction in the desktop and mobile evidence as the UI contract for implementation.
+  ```
+
+- **Execution outcome:** Design complete
+- **Artifact / path changed:** `PRODUCT.md`
+- **Artifact / path changed:** `twtty/plan/ux/surface-brief.md`
+- **Artifact / path changed:** `twtty/plan/ux/direction-contract.md`
+- **Artifact / path changed:** `twtty/plan/wireframes/index.html`
+- **Artifact / path changed:** `twtty/plan/wireframes/wireframe.css`
+- **Artifact / path changed:** `twtty/plan/evidence/quiet-utility-desktop.png`
+- **Artifact / path changed:** `twtty/plan/evidence/quiet-utility-mobile.png`
+- **Artifact / path changed:** `twtty/plan/plan.md`
+- **Notes:** Human User selected Quiet Utility and explicitly approved both responsive renderings. The Impeccable deterministic detector initially found six anti-patterns; all were corrected and the final detector run returned zero findings. Design items D-1 through D-7 refine the Architecture and cover product, data, infrastructure, security, tests, UX, and API behavior.
+
+### 016 · plan/2c · —
+
+- **Timestamp:** 2026-10-07T03:10:55Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Approve twelve dependency-complete work items with evaluation and independent validation before LLM behavior, identity bootstrap before cloud-authenticating code, disjoint expected footprints, and parallel execution after the repository contracts.
+  ```
+
+- **Execution outcome:** Orchestration complete
+- **Artifact / path changed:** `twtty/plan/plan.md`
+- **Notes:** Auto-approved under Autopilot (per 011). The final DAG is acyclic. W-1-eval precedes W-7, W-8 independent validation also precedes W-7, and W-3-identity-bootstrap precedes W-9. Parallel execution is selected because evaluation and product core can proceed independently after W-2 while the identity lane gates only cloud-authenticating work.
+
+### 017 · plan/2c · —
+
+- **Timestamp:** 2026-10-07T03:10:56Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  PLAN-EXIT: approve the mechanically validated baseline Plan as the binding implementation contract and advance to EXECUTE under the existing Autopilot authorization and hard guardrails.
+  ```
+
+- **Execution outcome:** PLAN-EXIT approved
+- **Artifact / path changed:** `twtty/plan/plan.md`
+- **Notes:** Auto-approved under Autopilot (per 011). Validation confirmed the required sections and ordering, no placeholders, nineteen balanced Mermaid diagrams, nine components, seven design refinements, twelve work items, complete FR-1 through FR-18, NFR-1 through NFR-15, and AC-1 through AC-30 traces, an acyclic DAG, clean Impeccable detection, responsive visual evidence, and explicit Human User UX approval. A focused plan review identified and resolved identity sequencing, acceptance ownership, safety footprint, validation ordering, runtime-budget, API, and cost-evidence defects before this exit.
