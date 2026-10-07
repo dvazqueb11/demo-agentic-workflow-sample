@@ -55,3 +55,147 @@
 - The API contract MUST use OpenAPI 3.1, publish a 90-day deprecation policy, and enforce 60 requests per minute per source IP with structured rate-limit errors.
 - The UI MUST meet WCAG 2.2 AA. Security verification MUST use OWASP ASVS and the OWASP API Security Top 10. Release evidence MUST include an SPDX or CycloneDX SBOM and SLSA provenance. Workflow telemetry MUST be OpenTelemetry-compatible.
 - Coverity, SonarQube, Synopsys toolchain validation, JFrog, Artifactory, Jira, Azure DevOps, regression farms, EDA validation, and Verdi are extension points only and MUST NOT be implemented in the baseline.
+
+## 5. Domains and use cases
+
+### System context
+
+```mermaid
+flowchart LR
+    participant["Workshop participant"]
+    facilitator["Workshop facilitator"]
+    maintainer["Repository maintainer"]
+
+    subgraph system["Agentic self healing to do demo"]
+        demo["To do application and bounded healing workflow"]
+    end
+
+    github["GitHub platform"]
+    azure["Azure demo environment"]
+
+    participant -->|"Uses app and triggers scenario"| demo
+    facilitator -->|"Guides run and resets demo"| demo
+    maintainer -->|"Maintains policy and reviews evidence"| demo
+    demo -->|"Runs automation and opens review outcome"| github
+    demo -->|"Serves demo application"| azure
+
+    classDef person fill:#e8f1ff,stroke:#2563eb,color:#0f172a
+    classDef systemClass fill:#ecfdf5,stroke:#059669,color:#0f172a
+    classDef external fill:#fff7ed,stroke:#ea580c,color:#0f172a
+    class participant,facilitator,maintainer person
+    class demo systemClass
+    class github,azure external
+```
+
+### Primary user journey
+
+```mermaid
+flowchart LR
+    subgraph use["Use the sample app"]
+        open["Open demo"]
+        manage["Manage to do items"]
+    end
+
+    subgraph trigger["Trigger one scenario"]
+        select["Select fixture"]
+        start["Start manual run"]
+    end
+
+    subgraph observe["Observe bounded healing"]
+        classify["Inspect classification"]
+        policy["Inspect policy decision"]
+        remediate["Observe one remediation attempt"]
+        validate["Inspect validation"]
+    end
+
+    subgraph review["Review outcome"]
+        outcome{"Outcome"}
+        pullRequest["Review pull request"]
+        escalation["Review escalation evidence"]
+    end
+
+    open --> manage --> select --> start --> classify --> policy --> remediate --> validate --> outcome
+    outcome -->|"Validation passes"| pullRequest
+    outcome -->|"Cannot heal safely"| escalation
+
+    classDef participant fill:#e8f1ff,stroke:#2563eb,color:#0f172a
+    classDef automation fill:#ecfdf5,stroke:#059669,color:#0f172a
+    classDef decision fill:#fef3c7,stroke:#d97706,color:#0f172a
+    class open,manage,select,start,pullRequest,escalation participant
+    class classify,policy,remediate,validate automation
+    class outcome decision
+```
+
+### 5.1 Domains
+
+Single domain — the whole system.
+
+### 5.2 UC-1: Manage to-do items
+
+- **Actors:** Workshop participant, workshop facilitator.
+- **Triggers:** An actor opens the available demo application.
+- **Main flow:**
+  1. The system displays existing to-do items and the public-demo-data warning.
+  2. The actor creates a to-do with a valid title and optional description.
+  3. The actor edits the title or description.
+  4. The actor marks the item complete and may reopen it.
+  5. The actor deletes the item when it is no longer needed.
+  6. The system preserves remaining items across browser and application restarts.
+- **Exceptions:** Invalid input produces field-level errors; a missing item produces a structured not-found response and refreshes the list; rate-limited requests produce a structured rate-limit response; an unavailable service displays an explicit unavailable state.
+- **Dependencies:** Available Azure demo environment, persisted public demo data, project-owned API.
+
+### 5.3 UC-2: Run an independent self-healing scenario
+
+- **Actors:** Workshop participant, workshop facilitator.
+- **Triggers:** An actor manually selects the unit-test, coverage, or performance scenario.
+- **Main flow:**
+  1. The system confirms no run of the selected scenario is active.
+  2. The system creates a temporary scenario branch and applies the known fixture.
+  3. Deterministic CI produces a normalized failure bundle.
+  4. The classifier assigns unit-test, coverage, performance, or unsupported.
+  5. The policy gate fixes allowed actions, writable paths, and validation commands.
+  6. The remediation agent receives the approved context and performs at most one remediation attempt.
+  7. Deterministic validation evaluates the scenario-specific and shared gates.
+  8. The system produces either a pull request requiring human review or a fail-closed escalation outcome.
+- **Exceptions:** A second run of the same scenario is rejected with a link to the active run; cancellation preserves available evidence without escalation; transient checkout, upload, or network failures retry once; unsupported, denied, low-confidence, unavailable-agent, or failed-validation outcomes stop without a pull request.
+- **Dependencies:** GitHub manual dispatch, deterministic fixtures, classifier, policy engine, remediation service, validation suite, pull-request and issue capabilities.
+
+### 5.4 UC-3: Review a successful remediation
+
+- **Actors:** Human reviewer, repository maintainer, workshop participant.
+- **Triggers:** Scenario validation passes after the single remediation attempt.
+- **Main flow:**
+  1. The workflow confirms the patch changed only scenario-approved paths and actions.
+  2. The workflow opens a pull request containing the patch and links the failure, policy, and validation evidence.
+  3. The reviewer inspects the diff and evidence.
+  4. The reviewer approves or rejects the pull request.
+  5. Only an approved pull request may be merged through protected-branch controls.
+  6. The temporary branch is deleted after the pull request is merged.
+- **Exceptions:** Failure to create the pull request retries once, then fails closed and uploads a downloadable escalation artifact; rejection leaves the default branch unchanged.
+- **Dependencies:** Passing validation, GitHub pull requests, branch protection, authenticated human review.
+
+### 5.5 UC-4: Review an escalation
+
+- **Actors:** Workshop facilitator, repository maintainer.
+- **Triggers:** The scenario is unsupported or cannot complete safely.
+- **Main flow:**
+  1. The workflow makes no further code change.
+  2. The workflow builds a redacted escalation bundle containing classification, policy, agent, and validation evidence available for the run.
+  3. The workflow creates or updates one deduplicated GitHub issue for the failure fingerprint.
+  4. The actor reviews the issue and linked run artifacts.
+  5. The actor closes the issue after manual resolution or confirms no action is required.
+  6. The temporary branch is deleted after the escalation is closed; failed-run artifacts remain available for 30 days.
+- **Exceptions:** If GitHub issue creation still fails after one retry, the run fails closed and retains a downloadable escalation artifact for manual action.
+- **Dependencies:** Failure fingerprinting, redaction, GitHub Issues, workflow artifact retention.
+
+### 5.6 UC-5: Adapt the reference implementation
+
+- **Actors:** Repository maintainer.
+- **Triggers:** A maintainer adds a future provider behind an extension point or changes a supported demo component.
+- **Main flow:**
+  1. The maintainer identifies the applicable provider interface and contract tests.
+  2. The maintainer implements the new adapter without changing core classification, policy, remediation-attempt, or validation semantics.
+  3. The maintainer runs unit, integration, policy, security, and contract tests.
+  4. The maintainer documents the adapter and opens a human-reviewed pull request.
+- **Exceptions:** An adapter that cannot satisfy the existing interface, safety controls, or runtime budget is rejected and requires a separately approved scope change.
+- **Dependencies:** Stable extension interfaces, contract tests, documentation, protected pull-request workflow.

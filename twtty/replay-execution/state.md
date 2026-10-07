@@ -6,8 +6,8 @@
 - **Active stage/gate position:** `SEED-EXIT` approved
 - **Active execution mode:** Interactive
 - **Autopilot authorization:** Entry `004` was not activated; entry `005` records return to Interactive mode
-- **Highest baseline sequence ID:** `008`
+- **Highest baseline sequence ID:** `009`
 - **Open work items:** None
-- **Reconciliation watermark:** `baseline-008`
+- **Reconciliation watermark:** `baseline-009`
 - **Next stage:** SPEC
-- **Next stage task:** `spec/1c` Use cases
+- **Next stage task:** `spec/1d` Technical specification

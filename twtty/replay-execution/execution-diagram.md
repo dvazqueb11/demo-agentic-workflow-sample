@@ -12,7 +12,8 @@ flowchart LR
     G["006 meta/config<br/>Config resolved<br/>Interactive"]
     D["007 spec/1a<br/>End of discovery<br/>Interactive"]
     B["008 spec/1b<br/>Business requirements approved<br/>Interactive"]
-    N["Next: SPEC / spec/1c"]
+    U["009 spec/1c<br/>Use cases approved<br/>Interactive"]
+    N["Next: SPEC / spec/1d"]
 
-    R --> S --> C --> A --> I --> G --> D --> B --> N
+    R --> S --> C --> A --> I --> G --> D --> B --> U --> N
 ```

@@ -137,3 +137,22 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Execution outcome:** Baseline metadata and business requirements approved
 - **Artifact / path changed:** `twtty/spec/spec.md`
 - **Notes:** Mechanical checks confirmed complete metadata plus non-empty Sections 1–4 with no placeholders. The result contains five goals, five stakeholder roles, ten quantified success metrics, and fourteen constraints. Review confirmed precision, alignment with the corrected seed, coverage of approved Discovery, and no premature design content.
+
+### 009 · spec/1c · —
+
+- **Timestamp:** 2026-10-07T02:47:14Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Goal: Add Section 5 to twtty/spec/spec.md.
+  Scope: Declare one domain; define complete use cases for to-do management, scenario execution, successful pull-request review, escalation review, and template maintenance; add the required problem-space system-context and user-journey flowchart diagrams.
+  Inputs: Approved Sections 1–4 and Discovery rounds.
+  Expected output: Each use case includes actors, triggers, numbered main flow, exceptions, and dependencies. Diagram labels are sanitized and styled; no solution design appears.
+  Acceptance criteria: Every primary persona and approved journey is covered; successful and failed remediation paths are explicit; diagrams satisfy the template format rules.
+  Tools: Local file editing, mechanical Mermaid and text checks, local git, and the existing GitHub remote.
+  ```
+
+- **Execution outcome:** Single-domain use cases and problem-space diagrams approved
+- **Artifact / path changed:** `twtty/spec/spec.md`
+- **Notes:** Mechanical checks found exactly two Mermaid flowcharts, five use cases, and all 25 required use-case fields. Review confirmed persona and journey coverage, explicit success and escalation paths, sanitized styled diagrams, and no solution-space design.
