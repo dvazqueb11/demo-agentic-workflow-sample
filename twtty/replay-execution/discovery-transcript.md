@@ -249,3 +249,11 @@ Recommended defaults applied include 60 requests per minute per source IP with s
 **Spec Agent:** Approve Round 4 Acceptance criteria and end the four-round requirements elicitation?
 
 **Human User:** Approved — end the four rounds (Recommended).
+
+## Discovery termination
+
+All required discovery dimensions were checked. Regulatory processing is N/A because the approved scope prohibits PII, secrets, customer-confidential, regulated, and production data. No unresolved ambiguity blocks specification drafting.
+
+**Spec Agent:** End of discovery; proceed to 1b Business requirements?
+
+**Human User:** Approved — end discovery and proceed (Recommended).

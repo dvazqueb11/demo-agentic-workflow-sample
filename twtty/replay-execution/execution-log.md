@@ -104,3 +104,17 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/twtty-runtime-config/runtimeconfig.md`
 - **Artifact / path changed:** `twtty/twtty-runtime-config/README.md`
 - **Notes:** Effective selections: harness = GitHub Copilot; devtools = GitHub; cloud = Azure; risk-calibration = default L1–L5 ladder at L2 plus agentic evaluation overlay; policies = default internal policy profile; best-practices = default profile; technical-stack = none; UX = default profile; reusable-assets = shipped skills directory; build tokenomics = default profile; product tokenomics = tracked with no enforced cap; agentic stack = shipped default; escalation = GitHub Issues. The bindings can satisfy the current L2 requirements; no contract mismatch was identified.
+
+### 007 · spec/1a · —
+
+- **Timestamp:** 2026-10-07T02:42:07Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  End of discovery; proceed to 1b Business requirements.
+  ```
+
+- **Execution outcome:** end of discovery
+- **Artifact / path changed:** `twtty/replay-execution/discovery-transcript.md`
+- **Notes:** Interactive Discovery completed all four required rounds. The transcript records the three upfront mode questions, approved round content, the config interview, a SEED refinement, the attempted but unactivated Autopilot request, and the return to Interactive mode. Required coverage was checked across personas, use cases, functional and non-functional requirements, integrations, data lifecycle, failures, metrics, acceptance evidence, constraints, and out-of-scope items.

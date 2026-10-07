@@ -10,7 +10,8 @@ flowchart LR
     A["004 meta/autopilot-enable<br/>Approved<br/>Human anchor pending"]
     I["005 meta/mode-change<br/>Interactive selected<br/>Autopilot never activated"]
     G["006 meta/config<br/>Config resolved<br/>Interactive"]
-    N["Next: SPEC / spec/1a"]
+    D["007 spec/1a<br/>End of discovery<br/>Interactive"]
+    N["Next: SPEC / spec/1b"]
 
-    R --> S --> C --> A --> I --> G --> N
+    R --> S --> C --> A --> I --> G --> D --> N
 ```
