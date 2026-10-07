@@ -14,7 +14,9 @@ escalation: github-issue
 
 ### sdlc-for-agentic-apps — overrides sdlc-for-agentic-apps/config/default-config.md
 
-None.
+```yaml
+agentic-stack: agentic-stack/github-agentic-workflows.md
+```
 
 ## Runtime
 

@@ -192,3 +192,35 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/replay-execution/state.md`
 - **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
 - **Notes:** Authorized scope: PLAN and EXECUTE for the active baseline buildout. The approved Spec, L2 controls, cost and time limits, and every hard guardrail remain binding. Human anchor: this entry becomes valid only when committed and pushed by the authorizing Human User; until verified, execution remains Interactive.
+
+### 012 · meta/skill-install · —
+
+- **Timestamp:** 2026-10-07T02:58:53Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Install the verified Impeccable UX skill project-scoped for GitHub Copilot after retrieving package integrity, pinned to the actual published wrapper version, and use it for PLAN wireframes and EXECUTE UI audit.
+  ```
+
+- **Execution outcome:** Impeccable wrapper 4.1.0 installed; skill manifest 4.5.0; engine 0.1.11
+- **Artifact / path changed:** `.github/skills/impeccable/`
+- **Artifact / path changed:** `.github/agents/`
+- **Artifact / path changed:** `.github/hooks/impeccable.json`
+- **Notes:** Human User explicitly authorized the corrected pinned install after the initially proposed nonexistent version was rejected by npm. Provenance: npm package `impeccable@4.1.0`, repository `pbakaus/impeccable`, Apache-2.0, package SHA-1 `e624d9c13dda74f08d1abdb26ba717ac4886f729`, package integrity `sha512-hnfdoUK/Xg3qPtL0/5xzh92qKOtmREOZloCmFgnC1nYh3M81ihwCQEL2QWKntYl8qg1OG+jQ7wubR634PgTDIw==`. The installer downloaded skill manifest 4.5.0 and engine 0.1.11. Role: greenfield product context, UX shaping, deterministic anti-pattern detection, accessibility audit, and finish review.
+
+### 013 · meta/config · —
+
+- **Timestamp:** 2026-10-07T02:58:54Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Override the shipped Microsoft Agent Framework default with GitHub Agentic Workflows and Copilot coding agent for the active project, because this stack directly satisfies the approved demonstration purpose. Preserve deterministic classification, policy, validation, human review, L2 evaluation, safety, tracing, and cost-evidence contracts.
+  ```
+
+- **Execution outcome:** config resolved
+- **Artifact / path changed:** `twtty/twtty-runtime-config/runtimeconfig.md`
+- **Artifact / path changed:** `twtty/twtty-runtime-config/agentic-stack/github-agentic-workflows.md`
+- **Artifact / path changed:** `twtty/twtty-runtime-config/README.md`
+- **Notes:** Auto-approved under Autopilot (per 011). Effective selections remain harness = GitHub Copilot, devtools = GitHub, cloud = Azure, risk calibration = L2 plus agentic overlay, policies and best practices = defaults, UX = default, escalation = GitHub Issues. Agentic stack is now GitHub Agentic Workflows with Copilot coding agent. Current official GitHub documentation confirms structured token and AI-credit evidence, satisfying the Spec cost-measurement contract.

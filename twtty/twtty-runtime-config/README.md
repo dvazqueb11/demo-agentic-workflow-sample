@@ -14,7 +14,8 @@ This folder holds this project's explicit TWTTY capability-binding overrides and
 - Specialization: `sdlc-for-agentic-apps`.
 - Override: escalation uses GitHub Issues instead of the baseline PR-comment default.
 - Runtime selections: risk level `L2`; runtime target `azure`.
-- All other bindings inherit shipped defaults, including the GitHub Copilot harness, GitHub devtools, Azure cloud provider, default risk ladder and agentic overlay, policy and best-practices profiles, UX profile, reusable skills, build tokenomics, product tokenomics schema, and agentic stack.
+- Agentic-stack override: GitHub Agentic Workflows with Copilot coding agent, selected to match the approved project purpose.
+- All other bindings inherit shipped defaults, including the GitHub Copilot harness, GitHub devtools, Azure cloud provider, default risk ladder and agentic overlay, policy and best-practices profiles, UX profile, reusable skills, build tokenomics, and product tokenomics schema.
 
 ## How to change a binding
 
