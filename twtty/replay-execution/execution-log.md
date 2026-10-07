@@ -176,3 +176,19 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/spec/spec.md`
 - **Artifact / path changed:** `twtty/replay-execution/discovery-transcript.md`
 - **Notes:** SPEC-EXIT self-review individually verified all 17 baseline checklist items and all 14 agentic addendum items against the artifact. Verified locations include Metadata and Sections 1–15; Section 5 single-domain map, five use cases, and two flowcharts; Sections 6–8 with 18 FRs, 15 NFRs, 30 ACs, 33 traced requirements, and no orphan or prohibited term; Section 9 with two complete tool schemas; Section 10 with three dimensions and N=3, K=2 stability; Sections 11–12 cost and safety controls; Sections 13 and 15 delegated disclosures; and Section 14 public-only data controls. Config files and entry 006 were verified. The validator passed. One issue required a fix before approval: the per-source-IP rate limit conflicted with no-PII processing, so the Human User approved a random non-identifying client token instead. Precision, seed alignment, coverage, and consistency were rechecked after the fix.
+
+### 011 · meta/autopilot-enable · —
+
+- **Timestamp:** 2026-10-07T02:52:04Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Enable Autopilot for the PLAN and EXECUTE stages of the active baseline buildout.
+  ```
+
+- **Execution outcome:** autopilot enabled
+- **Artifact / path changed:** `twtty/replay-execution/execution-log.md`
+- **Artifact / path changed:** `twtty/replay-execution/state.md`
+- **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
+- **Notes:** Authorized scope: PLAN and EXECUTE for the active baseline buildout. The approved Spec, L2 controls, cost and time limits, and every hard guardrail remain binding. Human anchor: this entry becomes valid only when committed and pushed by the authorizing Human User; until verified, execution remains Interactive.

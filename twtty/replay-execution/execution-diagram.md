@@ -14,7 +14,8 @@ flowchart LR
     B["008 spec/1b<br/>Business requirements approved<br/>Interactive"]
     U["009 spec/1c<br/>Use cases approved<br/>Interactive"]
     X["010 spec/1d<br/>SPEC-EXIT approved<br/>Interactive"]
+    P["011 meta/autopilot-enable<br/>PLAN and EXECUTE<br/>Human anchor pending"]
     N["Next: PLAN mode offer and plan/2a"]
 
-    R --> S --> C --> A --> I --> G --> D --> B --> U --> X --> N
+    R --> S --> C --> A --> I --> G --> D --> B --> U --> X --> P --> N
 ```
