@@ -89,3 +89,18 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/replay-execution/state.md`
 - **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
 - **Notes:** Entry 004 never became an active Autopilot authorization because the required Human-User-authored commit was not created. The Human User selected Interactive mode after two failed verification attempts. No gate was self-approved under entry 004.
+
+### 006 · meta/config · —
+
+- **Timestamp:** 2026-10-07T02:41:04Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Resolve the project capability configuration from the approved Discovery answers. Inherit all shipped defaults for the sdlc-for-agentic-apps specialization, override escalation from PR comments to GitHub Issues, and record the confirmed runtime selections L2 and Azure. Create twtty/twtty-runtime-config/runtimeconfig.md and README.md, validate the effective provider bindings against L2 controls, and record the resolved configuration.
+  ```
+
+- **Execution outcome:** config resolved
+- **Artifact / path changed:** `twtty/twtty-runtime-config/runtimeconfig.md`
+- **Artifact / path changed:** `twtty/twtty-runtime-config/README.md`
+- **Notes:** Effective selections: harness = GitHub Copilot; devtools = GitHub; cloud = Azure; risk-calibration = default L1–L5 ladder at L2 plus agentic evaluation overlay; policies = default internal policy profile; best-practices = default profile; technical-stack = none; UX = default profile; reusable-assets = shipped skills directory; build tokenomics = default profile; product tokenomics = tracked with no enforced cap; agentic stack = shipped default; escalation = GitHub Issues. The bindings can satisfy the current L2 requirements; no contract mismatch was identified.
