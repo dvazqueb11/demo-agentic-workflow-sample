@@ -6,7 +6,8 @@
 flowchart LR
     R["001 meta/risk-level<br/>L2 approved<br/>Interactive"]
     S["002 seed/0a<br/>SEED-EXIT approved<br/>Interactive"]
+    C["003 seed/0a<br/>Corrective SEED-EXIT approved<br/>Interactive"]
     N["Next: SPEC / spec/1a"]
 
-    R --> S --> N
+    R --> S --> C --> N
 ```
