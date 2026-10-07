@@ -11,7 +11,8 @@ flowchart LR
     I["005 meta/mode-change<br/>Interactive selected<br/>Autopilot never activated"]
     G["006 meta/config<br/>Config resolved<br/>Interactive"]
     D["007 spec/1a<br/>End of discovery<br/>Interactive"]
-    N["Next: SPEC / spec/1b"]
+    B["008 spec/1b<br/>Business requirements approved<br/>Interactive"]
+    N["Next: SPEC / spec/1c"]
 
-    R --> S --> C --> A --> I --> G --> D --> N
+    R --> S --> C --> A --> I --> G --> D --> B --> N
 ```

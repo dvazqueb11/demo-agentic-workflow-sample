@@ -118,3 +118,22 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Execution outcome:** end of discovery
 - **Artifact / path changed:** `twtty/replay-execution/discovery-transcript.md`
 - **Notes:** Interactive Discovery completed all four required rounds. The transcript records the three upfront mode questions, approved round content, the config interview, a SEED refinement, the attempted but unactivated Autopilot request, and the return to Interactive mode. Required coverage was checked across personas, use cases, functional and non-functional requirements, integrations, data lifecycle, failures, metrics, acceptance evidence, constraints, and out-of-scope items.
+
+### 008 · spec/1b · —
+
+- **Timestamp:** 2026-10-07T02:43:44Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Goal: Draft twtty/spec/spec.md metadata and Sections 1–4: Goals, Stakeholders, Success metrics, and Constraints.
+  Inputs: Approved project seed, discovery transcript, resolved config, L2 calibration, and adopted standards.
+  Scope: Business intent only; no use cases, FR/NFR IDs, technical design, or implementation choices beyond approved constraints.
+  Expected output: Baseline metadata, quantified goals and metrics, named stakeholder roles, and hard constraints.
+  Acceptance criteria: Every statement traces to approved Discovery; all success metrics include units and measurement windows; no unresolved placeholders; no solution design is introduced.
+  Tools: Local file editing, mechanical text checks, local git, and the existing GitHub remote.
+  ```
+
+- **Execution outcome:** Baseline metadata and business requirements approved
+- **Artifact / path changed:** `twtty/spec/spec.md`
+- **Notes:** Mechanical checks confirmed complete metadata plus non-empty Sections 1–4 with no placeholders. The result contains five goals, five stakeholder roles, ten quantified success metrics, and fourteen constraints. Review confirmed precision, alignment with the corrected seed, coverage of approved Discovery, and no premature design content.
