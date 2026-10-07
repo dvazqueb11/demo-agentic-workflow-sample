@@ -13,7 +13,8 @@ flowchart LR
     D["007 spec/1a<br/>End of discovery<br/>Interactive"]
     B["008 spec/1b<br/>Business requirements approved<br/>Interactive"]
     U["009 spec/1c<br/>Use cases approved<br/>Interactive"]
-    N["Next: SPEC / spec/1d"]
+    X["010 spec/1d<br/>SPEC-EXIT approved<br/>Interactive"]
+    N["Next: PLAN mode offer and plan/2a"]
 
-    R --> S --> C --> A --> I --> G --> D --> B --> U --> N
+    R --> S --> C --> A --> I --> G --> D --> B --> U --> X --> N
 ```

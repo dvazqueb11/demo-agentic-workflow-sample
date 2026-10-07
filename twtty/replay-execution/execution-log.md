@@ -156,3 +156,23 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Execution outcome:** Single-domain use cases and problem-space diagrams approved
 - **Artifact / path changed:** `twtty/spec/spec.md`
 - **Notes:** Mechanical checks found exactly two Mermaid flowcharts, five use cases, and all 25 required use-case fields. Review confirmed persona and journey coverage, explicit success and escalation paths, sanitized styled diagrams, and no solution-space design.
+
+### 010 · spec/1d · SPEC-EXIT
+
+- **Timestamp:** 2026-10-07T02:51:33Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Goal: Complete twtty/spec/spec.md with Sections 6–15 and prepare SPEC-EXIT.
+  Scope: Add uniquely identified FRs and NFRs; the approved 30 acceptance criteria with assessment method, evidence, pass condition, and traceability; agent tool schemas; L2 evaluation rubric with three-run stability; cost tracking and degradation behavior; safety policy; delegated UX and API requirements and disclosures; and public-demo data classification.
+  Inputs: Approved seed, Sections 1–5, four Discovery rounds, L2 matrices, baseline and agentic templates, runtime config, and adopted standards.
+  Expected output: A complete placeholder-free specification satisfying every baseline and agentic addendum checklist item.
+  Acceptance criteria: Every FR and NFR is covered by at least one AC; every evaluation dimension is referenced by an AC; agent tools have all ten schema fields; stochastic dimensions use N=3 and a 2-of-3 pass rule; all paths and commands are explicit; delegated choices include rationales.
+  Validation tools: Local file editing; rg and safe shell checks; local git; existing GitHub remote.
+  ```
+
+- **Execution outcome:** Complete baseline technical specification approved
+- **Artifact / path changed:** `twtty/spec/spec.md`
+- **Artifact / path changed:** `twtty/replay-execution/discovery-transcript.md`
+- **Notes:** SPEC-EXIT self-review individually verified all 17 baseline checklist items and all 14 agentic addendum items against the artifact. Verified locations include Metadata and Sections 1–15; Section 5 single-domain map, five use cases, and two flowcharts; Sections 6–8 with 18 FRs, 15 NFRs, 30 ACs, 33 traced requirements, and no orphan or prohibited term; Section 9 with two complete tool schemas; Section 10 with three dimensions and N=3, K=2 stability; Sections 11–12 cost and safety controls; Sections 13 and 15 delegated disclosures; and Section 14 public-only data controls. Config files and entry 006 were verified. The validator passed. One issue required a fix before approval: the per-source-IP rate limit conflicted with no-PII processing, so the Human User approved a random non-identifying client token instead. Precision, seed alignment, coverage, and consistency were rechecked after the fix.

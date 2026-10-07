@@ -250,6 +250,14 @@ Recommended defaults applied include 60 requests per minute per source IP with s
 
 **Human User:** Approved — end the four rounds (Recommended).
 
+### Acceptance refinement during SPEC self-review
+
+**Spec Agent:** The recommended per-source-IP rate limit conflicts with the approved no-PII processing rule. How should the conflict be resolved?
+
+**Human User:** Use an anonymous random client token and process no source IP in application telemetry (Recommended).
+
+**Resolution:** The API rate limit is 60 requests per minute per random non-identifying client token. The token is not derived from a user, device, or network identifier, and application telemetry excludes source IP.
+
 ## Discovery termination
 
 All required discovery dimensions were checked. Regulatory processing is N/A because the approved scope prohibits PII, secrets, customer-confidential, regulated, and production data. No unresolved ambiguity blocks specification drafting.
