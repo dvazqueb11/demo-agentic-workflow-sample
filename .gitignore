@@ -1,0 +1,25 @@
+# CMake build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+Testing/
+
+# Compiled artifacts
+*.a
+*.dylib
+*.o
+*.so
+
+# Coverage and benchmark outputs
+coverage/
+*.gcda
+*.gcno
+*.gcov
+benchmark-results/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
