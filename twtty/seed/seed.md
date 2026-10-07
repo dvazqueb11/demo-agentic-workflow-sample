@@ -39,7 +39,9 @@ Build a repository that demonstrates three self-healing scenarios.
 
 The repository should contain:
 
-- Small C++17 application
+- Small C++17 to-do application
+- Lightweight browser UI
+- Project-owned API
 - Unit tests
 - Coverage validation
 - Lightweight performance benchmark
@@ -54,17 +56,17 @@ The completed repository should be easy to understand and reusable as a template
 
 ### Repository Theme
 
-The application should simulate processing engineering job results.
+The application should be a regular, single-domain to-do app that customers can use while learning how agentic workflows and self-healing remediation pipelines operate.
 
 Example functions:
 
-- calculate_average()
-- find_duplicates()
-- summarize_job()
+- calculate_completion_rate()
+- find_duplicate_todos()
+- summarize_todos()
 
-The application itself is intentionally simple.
+Users should be able to create, view, complete, and delete to-do items through a lightweight browser UI backed by a project-owned API.
 
-The focus is the self-healing automation.
+The application itself is intentionally small and familiar. The focus remains the self-healing automation.
 
 ---
 
@@ -140,7 +142,7 @@ A human reviewer must approve any change.
 
 Introduce a deterministic defect inside:
 
-calculate_average()
+calculate_completion_rate()
 
 The defect should cause one unit test failure.
 
@@ -186,7 +188,7 @@ A healing PR fixes the bug and all tests pass.
 
 Introduce a commit that adds new functionality to:
 
-summarize_job()
+summarize_todos()
 
 without adding sufficient unit tests.
 
@@ -231,7 +233,7 @@ A healing PR adds useful tests and restores coverage compliance.
 
 Introduce a deliberate regression in:
 
-find_duplicates()
+find_duplicate_todos()
 
 using an inefficient nested-loop implementation.
 
@@ -257,7 +259,7 @@ A performance benchmark should fail when execution time exceeds a configured thr
 
 The agent may:
 
-- Modify implementation associated with find_duplicates()
+- Modify implementation associated with find_duplicate_todos()
 
 The agent may NOT:
 
@@ -419,7 +421,9 @@ Create extension points only.
 
 Implement:
 
-- C++ sample application
+- C++17 to-do application
+- Lightweight browser UI
+- Versioned API contract and implementation
 - Tests
 - Coverage validation
 - Performance benchmark
