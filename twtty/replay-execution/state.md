@@ -5,8 +5,9 @@
 - **Active risk level:** L2
 - **Active stage/gate position:** `SEED-EXIT` approved
 - **Active execution mode:** Interactive
-- **Highest baseline sequence ID:** `003`
+- **Autopilot authorization:** Entry `004` was not activated; entry `005` records return to Interactive mode
+- **Highest baseline sequence ID:** `005`
 - **Open work items:** None
-- **Reconciliation watermark:** `baseline-003`
+- **Reconciliation watermark:** `baseline-005`
 - **Next stage:** SPEC
 - **Next stage task:** `spec/1a` Discovery interview

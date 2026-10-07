@@ -57,3 +57,35 @@ Approved prompts and outcomes for the unnumbered baseline buildout.
 - **Artifact / path changed:** `twtty/replay-execution/state.md`
 - **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
 - **Notes:** Corrects the scope recorded by entry 002 after Human User refinement during Discovery. Self-review verified each SEED-EXIT condition against the revised artifact: canonical path and non-empty content; both required H2 sections; no template placeholders; configured remote with the revised seed commit pushed; L2 calibration remains entry 001; and explicit Human User approval. The old engineering-job terms were mechanically checked as absent. The bounded remediation architecture, three scenario restrictions, runtime objective, and human-approval controls remain consistent.
+
+### 004 · meta/autopilot-enable · —
+
+- **Timestamp:** 2026-10-07T02:21:49Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Enable Autopilot for everything else and the remaining discovery rounds in the active baseline buildout.
+  ```
+
+- **Execution outcome:** autopilot enabled
+- **Artifact / path changed:** `twtty/replay-execution/execution-log.md`
+- **Artifact / path changed:** `twtty/replay-execution/state.md`
+- **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
+- **Notes:** Authorized scope: the remainder of the active baseline buildout, including the remaining SPEC discovery rounds, SPEC, PLAN, and EXECUTE. Existing seed constraints, L2 controls, cost and time limits, and hard guardrails remain binding. Human anchor: this entry becomes valid only when committed and pushed by the authorizing Human User; until that commit is verified, execution remains Interactive.
+
+### 005 · meta/mode-change · —
+
+- **Timestamp:** 2026-10-07T02:25:49Z
+- **Approval outcome:** Approved
+- **Approved prompt:**
+
+  ```text
+  Continue in Interactive mode.
+  ```
+
+- **Execution outcome:** mode: autopilot -> interactive
+- **Artifact / path changed:** `twtty/replay-execution/execution-log.md`
+- **Artifact / path changed:** `twtty/replay-execution/state.md`
+- **Artifact / path changed:** `twtty/replay-execution/execution-diagram.md`
+- **Notes:** Entry 004 never became an active Autopilot authorization because the required Human-User-authored commit was not created. The Human User selected Interactive mode after two failed verification attempts. No gate was self-approved under entry 004.
